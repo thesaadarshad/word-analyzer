@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
+  output: 'export',
+  basePath: process.env.NODE_ENV === 'production' ? '/word-analyzer' : '',
   images: {
-    domains: [],
+    unoptimized: true,
   },
-  output: 'standalone',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
